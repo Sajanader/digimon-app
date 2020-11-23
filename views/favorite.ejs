@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <% result.forEach(element =>{ %>
+
+        <h2><%= element.name%></h2>
+       <img src="<%= element.img%>" alt="">
+        <p><%= element.level%></p>
+        <a href="/fav/<%= element.id%>">see details</a>
+        <% })%>
+</body>
+</html>

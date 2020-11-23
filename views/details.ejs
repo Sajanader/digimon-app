@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2><%= element.name%></h2>
+    <img src="<%= element.img%>" alt="">
+     <p><%= element.level%></p>
+<br>
+     <form action="/fav/<%=element.id%>?_method=PUT" method="POST">
+
+        <input type="text" name="name" value="<%= element.name%>">
+        <input type="text" name="level" value="<%= element.level%>">
+        <button>UPDATE</button>
+
+    </form>
+    <br>
+    <form action="/fav/<%=element.id%>?_method=DELETE" method="POST">
+        <button>DELETE</button>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/fav">My favorite</a></li>
+        </ul>
+    </header>
+<main>
+    <% result.forEach(element =>{ %>
+<section class='section-home'>
+        <h2><%= element.name%></h2>
+       <img src="<%= element.img%>" alt="">
+        <p><%= element.level%></p>
+        <form action="/fav" method="POST">
+
+            <input type="hidden" name="name" value="<%= element.name%>">
+            
+            <input type="hidden" name="img" value="<%= element.img%>">
+            
+            <input type="hidden" name="level" value="<%= element.level%>">
+            <button>add to favorite</button>
+
+        </form>
+    </section>
+   <% })%>
+
+</main>
+
+
+
+</body>
+</html>

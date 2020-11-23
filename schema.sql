@@ -1,0 +1,6 @@
+CREATE TABLE card(
+id SERIAL PRIMARY KEY,
+name VARCHAR (200),
+img VARCHAR(1000),
+level VARCHAR(200)
+);

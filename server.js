@@ -31,14 +31,18 @@ function Digimon(data){
 }
 
 
-app.get('/',home);
+app.get('/home',home);
+// app.post('/',search);
 app.post('/fav',addToFav);
 app.get('/fav',showFav);
 app.get('/fav/:id',handelDetails);
 app.put('/fav/:id',handelUpdate);
 app.delete('/fav/:id',handelDelete);
 
+function search(req,res){
 
+// let url=`https://digimon-api.herokuapp.com/api/digimon/${req.body.}`
+}
 
 function home(req,res){
     const url='https://digimon-api.herokuapp.com/api/digimon';

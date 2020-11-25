@@ -8,13 +8,14 @@
 </head>
 <body>
     <%- include('./layout/header')%>
-    
     <% result.forEach(element =>{ %>
+        <section class='section-home'>
+                <h2><%= element.name%></h2>
+               <img src="<%= element.img%>" alt="">
+                <p><%= element.level%></p>
 
-        <h2><%= element.name%></h2>
-       <img src="<%= element.img%>" alt="">
-        <p><%= element.level%></p>
-        <a href="/fav/<%= element.id%>">see details</a>
-        <% })%>
+            </section>
+           <% })%>
+        
 </body>
 </html>

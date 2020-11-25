@@ -31,18 +31,38 @@ function Digimon(data){
 }
 
 
-app.get('/home',home);
-// app.post('/',search);
+app.get('/',home);
+app.get('/home',search);
+app.post('/home',showSearch);
 app.post('/fav',addToFav);
 app.get('/fav',showFav);
 app.get('/fav/:id',handelDetails);
 app.put('/fav/:id',handelUpdate);
 app.delete('/fav/:id',handelDelete);
 
-function search(req,res){
 
-// let url=`https://digimon-api.herokuapp.com/api/digimon/${req.body.}`
+function search(req,res){
+    res.render('search');
 }
+function showSearch(req,res){
+    let url='https://digimon-api.herokuapp.com/api/digimon';
+if(req.body.search[1]==='name'){
+     url=`https://digimon-api.herokuapp.com/api/digimon/name/${req.body.search[0]}`;
+}
+    else if (req.body.search[1]==='level'){
+   url=`https://digimon-api.herokuapp.com/api/digimon/level/${req.body.search[0]}`;
+    }
+
+    superagent.get(url).then(data =>{
+
+        data.body.forEach(element =>{
+            new Digimon(element);
+        });
+  res.render('results',{result: allDig});
+    }).catch('error');
+}
+
+  
 
 function home(req,res){
     const url='https://digimon-api.herokuapp.com/api/digimon';

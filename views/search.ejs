@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <%- include('./layout/head')%>
 </head>
 <body>
+    <%- include('./layout/header')%>
 
-    <form action="/" method="post" >
-        <input type="radio" name="" id="">
-        <input type="radio" name="" id="">
+    <form action="/home" method="post" >
+        <br>
+        <label for="sreach">sreach</label>
+        <input type="text" name="search" id=""value="">
+
+        <br>
+        <label for="name">search by name</label>
+        <input type="radio" name="search" id=""value="name">
+
+        <br>
+        <label for="level">search by level</label>
+        <input type="radio" name="search" id=""value="level">
+        <br>
+        <button>search</button>
     </form>
 </body>
 </html>
